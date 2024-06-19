@@ -21,9 +21,19 @@ public partial class MainPage : ContentPage
             CounterBtn.Text = $"Clicked {count} times";
 
         await CrossFirebaseCloudMessaging.Current.CheckIfValidAsync();
-        var token = await CrossFirebaseCloudMessaging.Current.GetTokenAsync();
+        string token = null;
+        try
+        {
+            token = await CrossFirebaseCloudMessaging.Current.GetTokenAsync();
+        }
+        catch (Exception ex)
+        {
+            token = ex.Message;
+        }
         Console.WriteLine($"FCM token: {token}");
+        await DisplayAlert("Token:", token, "Cancelar");
 
+        await Clipboard.Default.SetTextAsync(token ?? "Texto pegado");
         SemanticScreenReader.Announce(CounterBtn.Text);
     }
 }

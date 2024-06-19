@@ -69,7 +69,6 @@
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
 		<PackageReference Include="Plugin.Firebase" Version="3.0.0" />
-		<PackageReference Include="Xamarin.Firebase.iOS.Installations.Temp" Version="10.16.0.4" />
 	</ItemGroup>
 	<ItemGroup>
 		<None Remove="GoogleService-Info.plist" />
