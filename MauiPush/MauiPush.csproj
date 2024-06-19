@@ -71,9 +71,6 @@
 		<PackageReference Include="Plugin.Firebase" Version="3.0.0" />
 	</ItemGroup>
 	<ItemGroup>
-		<None Remove="GoogleService-Info.plist" />
-	</ItemGroup>
-	<ItemGroup>
-		<BundleResource Include="GoogleService-Info.plist" />
+	  <BundleResource Remove="GoogleService-Info.plist" />
 	</ItemGroup>
 </Project>
